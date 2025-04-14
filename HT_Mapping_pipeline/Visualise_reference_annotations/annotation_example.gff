@@ -1,0 +1,14 @@
+##gff-version 3							
+##source-version geneious 2023.1.1							
+##sequence-region	HiCV_sequence_full_length	1	9364				
+HiCV	Geneious	ORF	1	9364	.	+	.
+HiCV	Geneious	ORF	594	6335	.	+	.
+HiCV	Geneious	Pfam	2394	2729	.	+	.
+HiCV	Geneious	Pfam	4470	4652	.	+	.
+HiCV	Geneious	Pfam	4953	6236	.	+	.
+HiCV	Geneious	misc_feature	6351	6356	.	+	.
+HiCV	Geneious	ORF	6497	8821	.	+	.
+HiCV	Geneious	Pfam	6668	6946	.	+	.
+HiCV	Geneious	Pfam	7661	8044	.	+	.
+HiCV	Geneious	Pfam	7322	7468	.	+	.
+HiCV	Geneious	Pfam	8339	8575	.	+	.
