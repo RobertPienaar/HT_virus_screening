@@ -15,7 +15,7 @@ At the moment, PoolingScreen is available for Illumina single- and paired-end se
 More information on PoolingScreen can be found in the "PoolingScreen" directory.
 
 
-## Second approach - Virus screening by mapping  
+## Second approach - Virus screening by high-throughput mapping and visualisation  
 
 This pipeline is not fully automated and is segmented into three parts, 1) high-throughput read mapping and filtering for multiple samples and reference sequences, 2) visualisation of reference sequence annotations, and 3) high-throughput visualisation of BAM files as a heatmap.
 
