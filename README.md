@@ -4,6 +4,8 @@ This repository contains updated scripts and pipelines used for screening multip
 
 Currently, this repository hosts two different approaches in screening pipelines. All future updates of either pipeline will be hosted here.
 
+The piplines (baring the R scripts) are compatible for Linux only.
+
 ## First Approach - PoolingScreen
 
 This pipeline utilises a retrograde BLASTx protocol on assembled contigs and transcripts using DIAMOND. Following this, the viral contigs from all of the datasets included in the pipeline run are collated together in a single file, which then is then analysed using CheckV. The main outputs to be utilised by the end user are the Krona charts at each stage and the CheckV results. The Krona charts can be viewed for each individual dataset, as well as combined charts by project and eventually for all of the datasets together.
