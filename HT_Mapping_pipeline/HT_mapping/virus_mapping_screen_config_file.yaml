@@ -1,0 +1,79 @@
+# Virus mapping screen config
+# can include env vars
+
+# Written by Robert D. Pienaar
+# Version: 3
+# Last updated: 2024-12-06 
+# Made usable with just one conda environment
+
+#####################################################
+#                                                   #
+#              Main quick Decisions                 #
+#                                                   #
+#####################################################
+ # Single or paired end ("SINGLE" or "PAIRED")
+    REACTION=PAIRED
+ # Will you use a conda environment?
+    Use_CONDA=YES
+ # Do you want to create mapping indexes using "mapper"-build and samtools "faidx"?
+    Build_indexes_for_mapping=NO
+ # File extensions
+   # This extension indicates the forward reads just to avoid duplicating the file names in the list generated.
+    Input_File_Extension=_1.fastq # If single end reads, then just use ".fastq" and if paired end reads then use "_1.fastq"
+
+#####################################################
+#                                                   #
+#     Projects, Reference sequences and samples     #
+#                                                   #
+#####################################################
+
+    # Project key name
+    BioprojectName=(Project1) # You can place multiple bioproject names in the brackets, but just separate them by a single space. e.g. Project1 Project2
+
+
+    # Reference sequences used to map reads to
+    virus_reference_sequence=(Virus_1_reference_sequence Virus_2_reference_sequence Virus_3_reference_sequence Virus_4_reference_sequence)    
+    
+#########################################################
+#                                                       #
+#      File paths for directories and environments      #
+#                                                       #
+#########################################################
+
+# Input and output file paths for compression and fastq
+    Working_directory=/home/Dataanalysis
+    InputPath=${Working_directory}/raw_fastq_files/Project1 # Input directory
+    trim_OUTPATH=${Working_directory}/raw_fastq_files/Project1/fastp_trimmed_outs # fastp output directory
+
+# Directories for mapping
+    Mapping_working_directory=${Working_directory}/virus_mapping # Where mapping outputs and references are
+    input_reference_dir=${Mapping_working_directory}/reference_virus # Where the reference sequence and ".fai" index is
+    mapper_index_dir=${input_reference_dir}/bowtie2_index # Where the mapper reference indexes are kept 
+
+    mapping_outputs_dir=${Mapping_working_directory}/map_outputs_Project1 # Where you want your mapping outputs to be
+
+# Location of environments for conda. 
+    # The environment is set to activate using "source activate"
+    mapping_env_dir=/home/environment-conda/pyt36
+
+#####################################################
+#                                                   #
+#        Softwares to call and parameters           #
+#                                                   #
+#####################################################
+
+    Trimming_PROG=fastp
+    compression_PROG=pigz
+    mapping_PROG=bowtie2            # or "hisat2" Choose as required
+    samtools_PROG=samtools
+
+# Parameters
+    Num_threads=92
+    Map_threads=48 # This is sometimes better to be half of the threads used for the other steps, if using 48 threads with 100 GB of RAM, it can be faster to change to 24 threads for just the mapping. 
+
+# Don't change this unless you need to
+    fastp_param_PE=$(echo "-q 15 -u 40 -l 36 --detect_adapter_for_pe --cut_right --cut_window_size 4 --cut_mean_quality 15 --correction")
+    fastp_param_SE=$(echo "-q 15 -u 40 -l 36 --cut_right --cut_window_size 4 --cut_mean_quality 15 --correction")
+
+ # Name of log file
+    Pipeline_Logfile_prefix=${InputPath}/Project1_${REACTION}_Virus_mapping_screen

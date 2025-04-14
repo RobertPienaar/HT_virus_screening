@@ -1,0 +1,37 @@
+# Variable table check
+# Proj_FILE InOut_PATHs Log_NAME Softs_CALL Para_CALL SinPair_CALL EXT_FILE
+# Sequencing reactions
+REACTION	SinPair_CALL
+# Environments
+mapping_env_dir	ENV_PATHS
+Use_CONDA	ENV_PATHS
+# Project references and indexes
+BioprojectName	Proj_FILE
+virus_reference_sequence	REF_SEQS
+Build_indexes_for_mapping	MAP_TASKS
+# General
+Working_directory	InOut_PATHs
+InputPath	InOut_PATHs
+trim_OUTPATH	InOut_PATHs
+# Mapping script variables
+Mapping_working_directory	InOut_PATHs
+input_reference_dir	InOut_PATHs
+mapper_index_dir	InOut_PATHs
+mapping_outputs_dir	InOut_PATHs
+# Logfile
+Pipeline_Logfile_prefix	Log_NAME
+# Software
+Trimming_PROG	Softs_CALL
+compression_PROG	Softs_CALL
+mapping_PROG	Softs_CALL
+samtools_PROG	Softs_CALL
+# Parameters
+Num_threads	Para_CALL
+fastp_param_PE	Para_CALL
+fastp_param_SE	Para_CALL
+Map_threads	Para_CALL
+# File extensions for trimming
+Input_File_Extension	EXT_FILE
+
+
+
