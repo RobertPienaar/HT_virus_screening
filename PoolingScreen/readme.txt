@@ -22,7 +22,10 @@
         10. CheckV: v0.9.0
         11. TaxonKit: v0.3.0
   
-  
+The current version of the script loads two separate conda environments. One for Krona and an additional one for CheckV.
+
+
+
 #  Downloading of the NCBI databases for DIAMOND
   
 #  Use the "virus_hermetia_databasecreationTAXID2022_05_15.sh" to download the full NCBI NR or NT databases and to also extract the sequences for the desired taxa using TaxonKit.
