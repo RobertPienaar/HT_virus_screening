@@ -16,6 +16,11 @@ At the moment, PoolingScreen is available for Illumina single- and paired-end se
     
 More information on PoolingScreen can be found in the "PoolingScreen" directory.
 
+![image](https://github.com/user-attachments/assets/08ee1cc7-2ce6-435d-88b8-e0d6e9317c57)
+
+Visual diagram of the PoolingScreen pipeline.
+Credit: Fig. 1 in Pienaar et al. 2025, DOI (https://doi.org/10.1016/j.jip.2025.108322)
+
 
 ## Second approach - Virus screening by high-throughput mapping and visualisation  
 
